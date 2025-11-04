@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHWISE: A Jornada Financeira</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Light Blue */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1e90ff; /* Dodger Blue */
+            text-align: center;
+            border-bottom: 2px solid #1e90ff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #ff4500; /* Orange Red */
+            margin-top: 25px;
+        }
+        .capa {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .capa p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .status, .decisao {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .status strong {
+            color: #008000; /* Green */
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e0ffff;
+            border: 2px dashed #1e90ff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<div id="capa-screen">
+    <div class="capa">
+        <h1>💰 TECHWISE: A Jornada Financeira 📈</h1>
+        <p><strong>Tema:</strong> Regime de Juro Simples, Desconto Comercial e Juro Antecipado.</p>
+        
+        <h2>Identificação:</h2>
+        
+        <label for="aluno-name"><strong>Aluno:</strong></label>
+        <input type="text" id="aluno-name" placeholder="Insere Aqui o Teu Nome" required style="padding: 5px; margin-bottom: 10px; width: 80%;">
+        
+        <br>
+        
+        <label for="turma-id"><strong>Turma:</strong></label>
+        <input type="text" id="turma-id" placeholder="Insere Aqui a Tua Turma" required style="padding: 5px; margin-bottom: 20px; width: 80%;">
+        
+        <h2>Cenário:</h2>
+        <p>A TechWise é uma startup de venda de gadgets inovadores. Começas com um capital inicial de <strong>10000 €</strong>. O objetivo é tomar 20 decisões de financiamento e investimento para crescer e terminar com o maior saldo final (Valor Líquido).</p>
+        
+        <button onclick="readUserInfoAndStartGame()">Começar o Jogo</button>
+    </div>
+</div>
+    <div id="game-screen" class="hidden">
+        <div class="status">
+            <p>Ano: <span id="year">1</span> | Mês: <span id="month">0</span></p>
+            <p>Capital de Tesouraria: <strong><span id="cash">10000.00</span> €</strong></p>
+            <p>Dívida Nominal Total: <span id="debt">0.00</span> €</p>
+            <p>Decisão Nº: <span id="decision-number">1</span>/20</p>
+        </div>
+
+        <div id="current-decision" class="decisao">
+            </div>
+        
+        <div id="buttons-container">
+            </div>
+    </div>
+
+    <div id="end-screen" class="hidden">
+        <h2>Fim do Jogo!</h2>
+        <div id="results">
+            <p><strong>Resultado Final da TechWise:</strong></p>
+            <p>Capital Final: <span id="final-cash"></span> €</p>
+            <p>Duração Total: <span id="game-time"></span> segundos</p>
+            <p>Parabéns! Submete o teu resultado por email.</p>
+        </div>
+        
+        <p>A enviar resultado para o EmailJS.</p>
+        <button onclick="sendResults()">Submeter Resultados</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
