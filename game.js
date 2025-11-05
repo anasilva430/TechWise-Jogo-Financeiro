@@ -857,7 +857,7 @@ function sendResults() {
     };
     
     
-    emailjs.send('service_hau66e2', 'template_km9qrq9', templateParams)
+    emailjs.send('service_wi13tin', 'template_km9qrq9', templateParams)
         .then(function(response) {
             alert('Resultado submetido com sucesso! Código: ' + response.status);
             
@@ -872,4 +872,5 @@ function sendResults() {
         });
     
     // ATENÇÃO: NENHUM CÓDIGO FORA DESTA FUNÇÃO (E FORA DO } DESTE BLOCO) DEVE EXISTIR NO FIM DO FICHEIRO.
+
 }
